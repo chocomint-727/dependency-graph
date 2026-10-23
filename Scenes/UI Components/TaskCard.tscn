@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://biyxsnr3h3klv"]
+
+[ext_resource type="PackedScene" uid="uid://05dk2ylx14u8" path="res://Scenes/UI Components/TextWithLabel.tscn" id="1_tf2oq"]
+[ext_resource type="Script" path="res://Scripts/UI Elements/Cards/TaskCard.cs" id="1_wjgei"]
+[ext_resource type="Theme" uid="uid://dotgntf4pmcaq" path="res://UI themes/MainTheme.tres" id="1_ysx7s"]
+[ext_resource type="Texture2D" uid="uid://b2jh2x3efy21x" path="res://icon.svg" id="2_liqxl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fgux"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0941176, 0.101961, 0.117647, 1)
+border_color = Color(0.3984, 0.43376, 0.48, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="TaskCard" type="GraphNode" node_paths=PackedStringArray("titleText", "blocking", "dueDate", "status")]
+anchors_preset = -1
+anchor_right = 0.4
+anchor_bottom = 0.4
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ysx7s")
+resizable = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_wjgei")
+titleText = NodePath("VBoxContainer/HBoxContainer/TextEdit")
+blocking = NodePath("VBoxContainer/HBoxContainer2/TextWithLabel")
+dueDate = NodePath("VBoxContainer/HBoxContainer2/TextWithLabel2")
+status = NodePath("VBoxContainer/HBoxContainer2/TextWithLabel3")
+highlightColor = Color(0.97, 0.3686, 0.45881, 0.756863)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6fgux")
+text = "aksjdhfalkjshdfkasjhdf
+"
+wrap_mode = 1
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+expand_icon = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+texture_normal = ExtResource("2_liqxl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextWithLabel" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("1_tf2oq")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.8
+
+[node name="TextWithLabel2" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("1_tf2oq")]
+layout_mode = 2
+size_flags_stretch_ratio = 1.1
+
+[node name="TextWithLabel3" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("1_tf2oq")]
+layout_mode = 2

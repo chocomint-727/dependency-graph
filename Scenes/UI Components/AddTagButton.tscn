@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2iwdvs1scy2y"]
+
+[ext_resource type="Theme" uid="uid://dotgntf4pmcaq" path="res://UI themes/MainTheme.tres" id="1_qvvqs"]
+[ext_resource type="Texture2D" uid="uid://b5ou3ylkejb7v" path="res://Sprites/plus-svgrepo-com.svg" id="2_1qxey"]
+
+[node name="TagContainer" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_qvvqs")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_1qxey")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Add Tag"

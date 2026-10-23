@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7lhqptfwixun"]
+
+[ext_resource type="PackedScene" uid="uid://05dk2ylx14u8" path="res://Scenes/UI Components/TextWithLabel.tscn" id="1_42ty3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_b6hii"]
+
+[sub_resource type="Animation" id="Animation_pcfse"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:anchor_bottom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.08]
+}
+
+[sub_resource type="Animation" id="Animation_3efe5"]
+resource_name = "Toast In"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-3, -3),
+"update": 0,
+"values": [1.0, 0.9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:anchor_bottom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-3, -3),
+"update": 0,
+"values": [1.08, 0.98]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6agh0"]
+_data = {
+"RESET": SubResource("Animation_pcfse"),
+"Toast In": SubResource("Animation_3efe5")
+}
+
+[node name="Toast" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 1.0
+anchor_right = 0.75
+anchor_bottom = 1.08
+
+[node name="TextWithLabel" parent="Panel" instance=ExtResource("1_42ty3")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.2
+anchor_bottom = 1.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.95
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_progress = SubResource("CanvasTexture_b6hii")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6agh0")
+}

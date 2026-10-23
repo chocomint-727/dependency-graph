@@ -1,0 +1,333 @@
+[gd_scene load_steps=13 format=3 uid="uid://dj7m57cm8n42r"]
+
+[ext_resource type="Script" path="res://Scripts/UI Elements/SidePanelHolder.cs" id="1_cuqv7"]
+[ext_resource type="Theme" uid="uid://dotgntf4pmcaq" path="res://UI themes/MainTheme.tres" id="1_edxci"]
+[ext_resource type="Shader" uid="uid://bo08uhcxg2foo" path="res://UI themes/shaders/blur_with_darken.tres" id="3_ni50a"]
+[ext_resource type="Texture2D" uid="uid://b207hbqbbpi7j" path="res://Sprites/arrow-to-shape-right-svgrepo-com.svg" id="4_4bo8e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e5pt5"]
+shader = ExtResource("3_ni50a")
+shader_parameter/blur_amount = 7.0
+shader_parameter/brightness_scale = 0.6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eio7j"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="Animation" id="Animation_4kc6t"]
+resource_name = "ButtonTurnIn"
+length = 0.500002
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.0, 3.14159]
+}
+
+[sub_resource type="Animation" id="Animation_p1s7t"]
+resource_name = "ButtonTurnOut"
+length = 0.500002
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [3.14159, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vx6c2"]
+resource_name = "ControlMoveIn"
+length = 0.500002
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.85, 0.7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchor_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [1.15, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureButton:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [3.14159, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_sr835"]
+resource_name = "ControlMoveOut"
+length = 0.500002
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.7, 0.85]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchor_right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [1.0, 1.15]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureButton:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.0, 3.14159]
+}
+
+[sub_resource type="Animation" id="Animation_r2ugj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureButton:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchor_left")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:anchor_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c1sds"]
+_data = {
+"ButtonTurnIn": SubResource("Animation_4kc6t"),
+"ButtonTurnOut": SubResource("Animation_p1s7t"),
+"ControlMoveIn": SubResource("Animation_vx6c2"),
+"ControlMoveOut": SubResource("Animation_sr835"),
+"RESET": SubResource("Animation_r2ugj")
+}
+
+[node name="BoardSelector" type="Control" node_paths=PackedStringArray("a", "openCloseButton", "menuButton", "settingsButton", "saveButton", "titleLine", "descriptionBox", "doneCheckBox", "severityMenu")]
+layout_mode = 3
+anchor_left = 0.7
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_edxci")
+script = ExtResource("1_cuqv7")
+a = NodePath("AnimationPlayer")
+openCloseButton = NodePath("TextureButton")
+menuButton = NodePath("Panel/HBoxContainer/Menu")
+settingsButton = NodePath("Panel/HBoxContainer/Settings")
+saveButton = NodePath("Panel/TabContainer/File/File/Save")
+titleLine = NodePath("Panel/TabContainer/Task/Task/Title")
+descriptionBox = NodePath("Panel/TabContainer/Task/Task/Description")
+doneCheckBox = NodePath("Panel/TabContainer/Task/Task/CheckBox")
+severityMenu = NodePath("Panel/TabContainer/Task/Task/OptionButton")
+
+[node name="Panel2" type="Panel" parent="."]
+z_index = 3
+material = SubResource("ShaderMaterial_e5pt5")
+layout_mode = 0
+offset_left = 181.0
+offset_top = 10.0
+offset_right = 281.0
+offset_bottom = 110.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_eio7j")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+modulate = Color(0.968627, 0.368627, 0.454902, 1)
+z_index = 4
+layout_mode = 0
+offset_left = 191.0
+offset_top = 20.0
+offset_right = 271.0
+offset_bottom = 100.0
+pivot_offset = Vector2(40, 40)
+texture_normal = ExtResource("4_4bo8e")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TabContainer" type="TabContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.9
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+current_tab = 0
+
+[node name="Task" type="MarginContainer" parent="Panel/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Task" type="VBoxContainer" parent="Panel/TabContainer/Task"]
+layout_mode = 2
+
+[node name="Title" type="TextEdit" parent="Panel/TabContainer/Task/Task"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_font_sizes/font_size = 16
+placeholder_text = "Node title"
+wrap_mode = 1
+
+[node name="Description" type="TextEdit" parent="Panel/TabContainer/Task/Task"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 16
+placeholder_text = "Node Description"
+wrap_mode = 1
+scroll_smooth = true
+
+[node name="OptionButton" type="OptionButton" parent="Panel/TabContainer/Task/Task"]
+layout_mode = 2
+alignment = 1
+item_count = 5
+popup/item_0/text = "Highest"
+popup/item_1/text = "High"
+popup/item_1/id = 1
+popup/item_2/text = "Mid"
+popup/item_2/id = 2
+popup/item_3/text = "Low"
+popup/item_3/id = 3
+popup/item_4/text = "Lowest"
+popup/item_4/id = 4
+
+[node name="CheckBox" type="CheckBox" parent="Panel/TabContainer/Task/Task"]
+layout_mode = 2
+text = "Done?"
+alignment = 1
+
+[node name="File" type="MarginContainer" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="File" type="VBoxContainer" parent="Panel/TabContainer/File"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Save" type="Button" parent="Panel/TabContainer/File/File"]
+layout_mode = 2
+text = "Save"
+
+[node name="Integrations" type="MarginContainer" parent="Panel/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Integrations" type="VBoxContainer" parent="Panel/TabContainer/Integrations"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="Settings" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Settings"
+
+[node name="Menu" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Menu"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c1sds")
+}

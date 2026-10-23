@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c47rswj6u7dkk"]
+
+[ext_resource type="Theme" uid="uid://dotgntf4pmcaq" path="res://UI themes/MainTheme.tres" id="1_jvjum"]
+[ext_resource type="Texture2D" uid="uid://cv8pccqxr4ifh" path="res://Sprites/Full Circle.svg" id="2_cf1wc"]
+
+[node name="TagContainer" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_jvjum")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_cf1wc")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Placeholder Text"

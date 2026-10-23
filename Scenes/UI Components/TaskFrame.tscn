@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://1480utt352ce"]
+
+[ext_resource type="Script" path="res://Scripts/UI Elements/TaskFrame.cs" id="1_yt3jq"]
+
+[node name="GraphFrame" type="GraphFrame"]
+offset_right = 9.0
+offset_bottom = 63.0
+title = "asdfkjasl;dkfjal;skjdf;laskjdf;laksjd;flkajsdf;lk"
+script = ExtResource("1_yt3jq")

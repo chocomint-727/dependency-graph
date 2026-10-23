@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://05dk2ylx14u8"]
+
+[ext_resource type="Script" path="res://Scripts/UI Elements/Misc labels/UneditableTextWithTitle.cs" id="1_f6tor"]
+[ext_resource type="Theme" uid="uid://8m0ejn6uiky6" path="res://UI themes/SmallLabel.tres" id="2_qis1x"]
+[ext_resource type="Theme" uid="uid://bodrg21uop0o4" path="res://UI themes/SmallContent.tres" id="3_ksok3"]
+
+[node name="TextWithLabel" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+script = ExtResource("1_f6tor")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_qis1x")
+text = "Blocking"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("3_ksok3")
+text = "20"
